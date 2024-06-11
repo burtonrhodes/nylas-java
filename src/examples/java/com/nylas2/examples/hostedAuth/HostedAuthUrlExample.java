@@ -1,0 +1,35 @@
+package com.nylas2.examples.hostedAuth;
+
+import com.nylas2.HostedAuthentication;
+import com.nylas2.NylasApplication;
+import com.nylas2.NylasClient;
+import com.nylas2.Scope;
+import com.nylas2.examples.ExampleConf;
+
+public class HostedAuthUrlExample {
+
+	public static void main(String[] args) throws Exception {
+		ExampleConf conf = new ExampleConf();
+		NylasClient client = new NylasClient();
+		NylasApplication application = client.application(conf.get("nylas.client.id"), conf.get("nylas.client.secret"));
+		HostedAuthentication authentication = application.hostedAuthentication();
+		String hostedAuthUrl = authentication.urlBuilder()
+			.redirectUri("https://example.com/nylas-redirect")
+			.responseType("code")
+			.scopes(Scope.values())
+			.loginHint(conf.get("hosted.login.hint"))
+			.state("example_csrf_token")
+			.forcePassword(true)
+			.buildUrl();
+		
+		System.out.println("Forward the user to this URL for hosted authentication:");
+		System.out.println(hostedAuthUrl);
+		System.out.println();
+		
+		System.out.println("If the user authenticates and grants permission for Nylas to access their account,");
+		System.out.println("then grab the authorication code included when the user is redirected to your server.");
+		System.out.println("Enter it in example.properties to use it for the fetch token example");
+
+	}
+
+}

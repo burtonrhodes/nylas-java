@@ -9,7 +9,7 @@
 		<Root level="INFO">
 			<AppenderRef ref="Console" />
 		</Root>
-		<Logger name="com.nylas" level="DEBUG"/>
+		<Logger name="com.nylas2" level="DEBUG"/>
 <!-- 	
 		<Logger name="com.nylas.http.Summary" level="DEBUG"/>
 		<Logger name="com.nylas.http.Headers" level="INFO"/>
