@@ -101,7 +101,7 @@ test {
 
 tasks.register('runExample', JavaExec) {
     classpath = sourceSets.examples.runtimeClasspath
-    main = project.hasProperty("example") ? project.getProperty("example") : "com.nylas.examples.Examples"
+    mainClass.set(project.hasProperty("example") ? project.getProperty("example") : "com.nylas2.examples.Examples")
 }
 
 def getGitCommitHash = { ->
@@ -116,8 +116,10 @@ def getGitCommitHash = { ->
 tasks.register('createProperties') {
     dependsOn processResources
     doLast {
-        mkdir "$buildDir/resources/main"
-        new File("$buildDir/resources/main/build.properties").withWriter { w ->
+        def resourcesDir = layout.buildDirectory.dir('resources/main').get().asFile
+        mkdir resourcesDir
+        def propertiesFile = new File(resourcesDir, 'build.properties')
+        propertiesFile.withWriter { w ->
             Properties p = new Properties()
             p['version'] = project.version.toString()
             p['commit.hash'] = getGitCommitHash()
