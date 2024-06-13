@@ -21,17 +21,17 @@ import okio.GzipSource;
 /**
  * OkHttp Interceptor which provides 3 loggers for HTTP requests/responses:
  * <dl>
- *   <dt>com.nylas.http.Summary</dt><dd>logs one line for each request, containing method, URI, and content size
+ *   <dt>com.nylas2.http.Summary</dt><dd>logs one line for each request, containing method, URI, and content size
 and one line for each response containing status code, message, content size and duration.</dd>
- *   <dt>com.nylas.http.Headers</dt><dd>logs request and response headers (except Authorization value by default).</dd>
- *   <dt>com.nylas.http.Body</dt><dd>logs request and response bodies (only the first 10kB by default).</dd>
+ *   <dt>com.nylas2.http.Headers</dt><dd>logs request and response headers (except Authorization value by default).</dd>
+ *   <dt>com.nylas2.http.Body</dt><dd>logs request and response bodies (only the first 10kB by default).</dd>
  * </dl>
  */
 public class HttpLoggingInterceptor implements Interceptor {
 
-	private static final Logger requestLogs = LoggerFactory.getLogger("com.nylas.http.Summary");
-	private static final Logger headersLogs = LoggerFactory.getLogger("com.nylas.http.Headers");
-	private static final Logger bodyLogs = LoggerFactory.getLogger("com.nylas.http.Body");
+	private static final Logger requestLogs = LoggerFactory.getLogger("com.nylas2.http.Summary");
+	private static final Logger headersLogs = LoggerFactory.getLogger("com.nylas2.http.Headers");
+	private static final Logger bodyLogs = LoggerFactory.getLogger("com.nylas2.http.Body");
 	
 	private boolean logAuthHeader = false;
 	private int maxBodyBytesToLog = 10_000;

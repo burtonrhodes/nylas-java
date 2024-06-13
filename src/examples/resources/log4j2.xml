@@ -11,9 +11,9 @@
 		</Root>
 		<Logger name="com.nylas2" level="DEBUG"/>
 <!-- 	
-		<Logger name="com.nylas.http.Summary" level="DEBUG"/>
-		<Logger name="com.nylas.http.Headers" level="INFO"/>
-		<Logger name="com.nylas.http.Body" level="INFO"/>
+		<Logger name="com.nylas2.http.Summary" level="DEBUG"/>
+		<Logger name="com.nylas2.http.Headers" level="INFO"/>
+		<Logger name="com.nylas2.http.Body" level="INFO"/>
 -->
 	</Loggers>
 </Configuration>

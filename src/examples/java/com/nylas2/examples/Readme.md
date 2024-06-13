@@ -20,6 +20,6 @@ Create an example.properties file from the [provided template](https://github.co
 	
 Here is an example of how to run the Hosted Authentication example:
 
-`./gradlew runExample -Pexample=com.nylas.examples.hostedAuth.HostedAuthUrlExample` 
+`./gradlew runExample -Pexample=com.nylas2.examples.hostedAuth.HostedAuthUrlExample` 
 
 Replace `hostedAuth.HostedAuthUrlExample` with any of the examples found in the subdirectories here.

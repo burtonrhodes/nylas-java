@@ -17,14 +17,14 @@ If you have a question about the Nylas Communications Platform, please reach out
 
 **Setup via Gradle**: If you're using Gradle, add the following to your dependencies section of build.gradle:
 
-    implementation("com.nylas.sdk:nylas-java-sdk:1.22.0")
+    implementation("com.nylas.sdk:nylas-java-sdk:1.23.0")
 
 **Setup via Maven**: For projects using Maven, add the following to your POM file:
 
     <dependency>
       <groupId>com.nylas.sdk</groupId>
       <artifactId>nylas-java-sdk</artifactId>
-      <version>1.22.0</version>
+      <version>1.23.0</version>
     </dependency>
     
 **Build from source**: To build from source, clone this repo and build the project with Gradle.
@@ -52,12 +52,12 @@ The SDK uses [SLF4J](http://www.slf4j.org) for logging.  Applications using the 
 Common choices are log4j, logback, java.util.logging. If the application doesn't specify any logging framework,
 then SLF4J will emit one warning and then be completely silent.
 
-By default, the HTTP client is configured with the `com.nylas.HttpLoggingInterceptor`
+By default, the HTTP client is configured with the `com.nylas2.HttpLoggingInterceptor`
 which provides 3 loggers for HTTP requests that only log at DEBUG level.
-- `com.nylas.http.Summary` logs one line for each request, containing method, URI, and content size
+- `com.nylas2.http.Summary` logs one line for each request, containing method, URI, and content size
 and one line for each response containing status code, message, content size and duration.
-- `com.nylas.http.Headers` logs the request and response HTTP headers (except Authorization value by default).
-- `com.nylas.http.Body` logs request and response bodies (first 10kB by default).
+- `com.nylas2.http.Headers` logs the request and response HTTP headers (except Authorization value by default).
+- `com.nylas2.http.Body` logs request and response bodies (first 10kB by default).
 
 Enabling or disabling those loggers is done via the logging framework being used.
 For example, if using log4j2 and with an xml configuration file, include this line to enable all three:

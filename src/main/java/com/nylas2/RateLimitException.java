@@ -70,6 +70,6 @@ public class RateLimitException extends RequestFailedException {
 
 	@Override
 	public String toString() {
-		return "com.nylas.RateLimitException [" + formatError(getStatusCode(), getErrorType(), getErrorMessage()) + "]";
+		return "com.nylas2.RateLimitException [" + formatError(getStatusCode(), getErrorType(), getErrorMessage()) + "]";
 	}
 }

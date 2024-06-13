@@ -360,7 +360,7 @@ Release 1.0.1 to address a major bug.
 
 ### Added
 
-- Constructor for com.nylas.Event.Recurrence to allow creation of event recurrences. (GH Issue #4)
+- Constructor for com.nylas2.Event.Recurrence to allow creation of event recurrences. (GH Issue #4)
 
 ## [1.0.0] - Released 2020-06-13
 
@@ -381,7 +381,7 @@ This second release aims toward API stability so that we can get to v1.0.0.
 
 ### Changed
 
-- [BREAKING] List/query methods now return objects of type com.nylas.RemoteCollection (instead of java.util.List)
+- [BREAKING] List/query methods now return objects of type com.nylas2.RemoteCollection (instead of java.util.List)
   which support lazy iteration of results fetched from the server in batches of 100 (by default), or eagerly
   fetching all via fetchAll method
 - [BREAKING] Updated timestamp/date apis to use standard java.time.Instant and java.time.LocalDate
