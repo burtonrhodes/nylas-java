@@ -1,100 +1,20 @@
 # Nylas Java SDK Changelog
 
-### [2.4.1] - Released 2024-07-26
+## [Unreleased]
 
-### Changed
-* Added missing `masterEventId` field in `Event` model
-* Added missing `EWS` provider in `Provider` enum
-* Fixed issue where the revoke OAuth token function was not working correctly
-
-### [2.4.0] - Released 2024-06-28
-
-### Added
-* Added webhook validation support
-
-### Changed
-* Fixed issue where from field was not accessible when sending messages
-
-### [2.3.2] - Released 2024-06-26
-
-### Changed
-* Fixed default When type
-* Fixed issue where from field was not accessible when creating drafts
-
-### [2.3.1] - Released 2024-06-10
-
-### Changed
-* Fixed code exchange response for scope value
-
-### [2.3.0] - Released 2024-04-30
-
-### Added
-* Added missing webhook triggers
-* Added provider field to token exchange response
-* Added support for clean messages endpoint
-* Added support for custom headers field for Drafts and Messages
-* Added support for overriding various fields of outgoing requests
-
-### Changed
-* Fixed issue where attachments < 3mb were not being encoded correctly
-
-## [2.2.1] - Released 2024-03-05
-
-### Added
-* Added support for `provider` field in code exchange response
-
-### Changed
-* Improved message sending and draft create/update performance
-* Change default timeout to match API (90 seconds)
-
-## [2.2.0] - Released 2024-02-27
-
-### Added
-* Added support for `roundTo` field in availability response
-* Added support for `attributes` field in folder model
-* Added support for icloud as an auth provider
-
-### Changed
-* Fixed builder for FindAttachmentQueryParams
-* Fixed scopes to be optional for IMAP grants
-* Fixed typo in updating grant schema
-* Fixed endpoint for rotating webhook secrets
-* Fixed response type for returning webhook IP addresses
-
-### Removed
-* Removed unnecessary `clientId` from detectProvider params
-
-## [2.1.0] - Released 2024-02-12
-
-### Added
-* Add support for getting OAuth token info
-
-### Changed
-* Fix schema issues in the `Event`, `Message`, `Draft`, and `CodeExchangeResponse` models
-
-## [2.0.0] - Released 2024-02-05
-
-### BREAKING CHANGES
-
-* Renamed artifact from `nylas-java-sdk` to `nylas`.
-* Nylas SDK v2 supports the Nylas API v3 exclusively, dropping support for any endpoints that are not available in v3.
-* Removed all REST calls from models and moved them directly into resources
+This section contains changes that have been committed but not yet released.
 
 ### Added
 
-* Full Kotlin support
-* Created models for all API resources and endpoints, for all HTTP methods to reduce confusion on which fields are available for each endpoint
-* Created error classes for the different API errors as well as SDK-specific errors
-
 ### Changed
 
-* Leveraged Moshi annotations for JSON serialization/deserialization as opposed to manually writing JSON maps
-* Removed all REST calls from models and moved them directly into resources
+### Deprecated
+
+### Fixed
 
 ### Removed
 
-* Non-builder ways for initializing `NylasClient`
-* Local Webhook development support is removed due to incompatibility with the new API version
+### Security
 
 ## [1.22.0] - Released 2024-01-29
 
@@ -440,7 +360,7 @@ Release 1.0.1 to address a major bug.
 
 ### Added
 
-- Constructor for com.nylas.Event.Recurrence to allow creation of event recurrences. (GH Issue #4)
+- Constructor for com.nylas2.Event.Recurrence to allow creation of event recurrences. (GH Issue #4)
 
 ## [1.0.0] - Released 2020-06-13
 
@@ -461,7 +381,7 @@ This second release aims toward API stability so that we can get to v1.0.0.
 
 ### Changed
 
-- [BREAKING] List/query methods now return objects of type com.nylas.RemoteCollection (instead of java.util.List)
+- [BREAKING] List/query methods now return objects of type com.nylas2.RemoteCollection (instead of java.util.List)
   which support lazy iteration of results fetched from the server in batches of 100 (by default), or eagerly
   fetching all via fetchAll method
 - [BREAKING] Updated timestamp/date apis to use standard java.time.Instant and java.time.LocalDate
@@ -475,16 +395,8 @@ This second release aims toward API stability so that we can get to v1.0.0.
 
 Initial preview release
 
-[Unreleased]: https://github.com/nylas/nylas-java/compare/v2.4.1...HEAD
-[2.4.1]: https://github.com/nylas/nylas-java/releases/tag/v2.4.1
-[2.4.0]: https://github.com/nylas/nylas-java/releases/tag/v2.4.0
-[2.3.2]: https://github.com/nylas/nylas-java/releases/tag/v2.3.2
-[2.3.1]: https://github.com/nylas/nylas-java/releases/tag/v2.3.1
-[2.3.0]: https://github.com/nylas/nylas-java/releases/tag/v2.3.0
-[2.2.1]: https://github.com/nylas/nylas-java/releases/tag/v2.2.1
-[2.2.0]: https://github.com/nylas/nylas-java/releases/tag/v2.2.0
-[2.1.0]: https://github.com/nylas/nylas-java/releases/tag/v2.1.0
-[2.0.0]: https://github.com/nylas/nylas-java/releases/tag/v2.0.0
+[Unreleased]: https://github.com/nylas/nylas-java/compare/v1.22.0...HEAD
+[1.22.0]: https://github.com/nylas/nylas-java/releases/tag/v1.22.0
 [1.21.0]: https://github.com/nylas/nylas-java/releases/tag/v1.21.0
 [1.20.1]: https://github.com/nylas/nylas-java/releases/tag/v1.20.1
 [1.20.0]: https://github.com/nylas/nylas-java/releases/tag/v1.20.0
